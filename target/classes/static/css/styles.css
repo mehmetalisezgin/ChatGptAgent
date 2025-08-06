@@ -1,0 +1,374 @@
+/*
+ * Global stylesheet for the Kod Kahvesi resume website.
+ *
+ * This file defines a simple yet modern dark‑themed design using accent
+ * colours inspired by the project requirements. All pages share the same
+ * navigation bar and footer components to provide a consistent look and
+ * feel. The layout is responsive, adapting gracefully to smaller screens.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+/* Colour palette variables for easy customization */
+:root {
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-orange: #f16b22;
+    --color-turquoise: #30d5c8;
+    --color-lightgreen: #8be38f;
+    --color-card-bg: rgba(255, 255, 255, 0.05);
+}
+
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--color-turquoise);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+a:hover {
+    color: var(--color-orange);
+}
+
+/* Navigation bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--color-black);
+    border-bottom: 2px solid var(--color-orange);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-orange);
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .nav-links li a {
+    color: var(--color-white);
+    font-weight: 500;
+}
+
+.navbar .nav-links li a:hover {
+    color: var(--color-orange);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    border-top: 2px solid var(--color-orange);
+    background-color: var(--color-black);
+    font-size: 0.9rem;
+}
+
+/* Hero section (index) */
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 6rem 2rem;
+    background-image: url('../images/index_bg.png');
+    background-size: cover;
+    background-position: center;
+    color: var(--color-white);
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 1rem auto 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* Weather section on index */
+.weather-section {
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.weather-section h2 {
+    margin-bottom: 1.5rem;
+    color: var(--color-orange);
+}
+
+.weather-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.weather-card {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-orange);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    min-width: 160px;
+    color: var(--color-white);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.weather-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-turquoise);
+}
+
+.weather-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    color: var(--color-turquoise);
+}
+
+.weather-card .temp {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.weather-card .desc {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--color-lightgreen);
+}
+
+/* About page */
+.about-section {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.about-section img {
+    max-width: 100%;
+    margin-top: 2rem;
+    border-radius: 8px;
+}
+
+/* Experiences page */
+.experiences-section {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+.experience-item {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-orange);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.experience-item h3 {
+    margin-top: 0;
+    color: var(--color-turquoise);
+}
+
+.experience-item span {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+/* Projects page */
+.projects-section {
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.project-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.project-card {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-orange);
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-turquoise);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    color: var(--color-turquoise);
+}
+
+.project-card p {
+    flex-grow: 1;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.project-card a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+    color: var(--color-orange);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.project-card a:hover {
+    color: var(--color-turquoise);
+}
+
+/* Tools page */
+.tools-section {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.tools-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.tool-item {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-orange);
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+}
+
+/* Contact page */
+.contact-section {
+    max-width: 700px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+.contact-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-section label {
+    align-self: flex-start;
+    font-weight: 600;
+}
+
+.contact-section input,
+.contact-section textarea {
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--color-white);
+    font-size: 1rem;
+}
+
+.contact-section input::placeholder,
+.contact-section textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.contact-section button {
+    background-color: var(--color-orange);
+    color: var(--color-black);
+    border: none;
+    padding: 0.75rem;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-section button:hover {
+    background-color: #d35919;
+}
+
+.success-message {
+    color: var(--color-turquoise);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.error-message {
+    color: #ff6b6b;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        gap: 1rem;
+    }
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+    .project-card {
+        width: 100%;
+    }
+    .weather-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}

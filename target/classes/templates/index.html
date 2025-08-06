@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="tr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kod Kahvesi – Full Stack Developer kişisel resume sayfası. Projelerim, tecrübelerim ve iletişim bilgilerim burada.">
+    <title>Hoşgeldiniz | Kod Kahvesi</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-YZJyxUAfxOJfNiTI1uzlS8xqzOZsQVa2hbE6GDn7QUw+RnK3ab5UoUTuVYVm9v/9jsviyGPJe0oyDshvClbHSg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <a class="logo" href="/">Kod Kahvesi</a>
+        <ul class="nav-links">
+            <li><a href="/about">Hakkımda</a></li>
+            <li><a href="/experiences">Tecrübelerim</a></li>
+            <li><a href="/projects">Projeler</a></li>
+            <li><a href="/tools">Araçlar</a></li>
+            <li><a href="/contact">İletişim</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section class="hero">
+        <h1>Resume Sayfama Hoşgeldiniz</h1>
+        <p>Kod Kahvesi olarak modern web ve yazılım geliştirme alanında deneyimli bir full stack developer'ım. Burada projelerimi ve becerilerimi keşfedebilirsiniz.</p>
+    </section>
+    <section class="weather-section">
+        <h2>Canlı Hava Durumu</h2>
+        <div class="weather-cards">
+            <div class="weather-card" th:each="entry : ${weather.entrySet()}">
+                <h3 th:text="${entry.key}">Şehir</h3>
+                <p class="temp" th:text="${#numbers.formatDecimal(entry.value.temperature, 0, 'POINT', 0, 'NONE')} + '°C'">20°C</p>
+                <p class="desc" th:text="${entry.value.description}">açık</p>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2025 Kod Kahvesi</p>
+</footer>
+</body>
+</html>

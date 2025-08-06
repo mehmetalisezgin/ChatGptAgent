@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="tr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Araçlar – Kod Kahvesi'nin kullandığı programlama dilleri ve araçlar listesi.">
+    <title>Araçlar | Kod Kahvesi</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-YZJyxUAfxOJfNiTI1uzlS8xqzOZsQVa2hbE6GDn7QUw+RnK3ab5UoUTuVYVm9v/9jsviyGPJe0oyDshvClbHSg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <a class="logo" href="/">Kod Kahvesi</a>
+        <ul class="nav-links">
+            <li><a href="/about">Hakkımda</a></li>
+            <li><a href="/experiences">Tecrübelerim</a></li>
+            <li><a href="/projects">Projeler</a></li>
+            <li><a href="/tools" class="active">Araçlar</a></li>
+            <li><a href="/contact">İletişim</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section class="tools-section">
+        <h1>Kullandığım Araçlar</h1>
+        <div class="tools-list">
+            <div class="tool-item" th:each="tool : ${tools}" th:text="${tool.toolName}">Java</div>
+        </div>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2025 Kod Kahvesi</p>
+</footer>
+</body>
+</html>
